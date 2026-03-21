@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
+  background: #1c1c1a;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+h1 {
+    text-shadow: 0px 0px 6px #000000;
+    color: whitesmoke;
+    font-size: 60px;
+}
+p {
+    margin: -30px 70px 40px 0px;
+    font-size: 20px;
+}
+#generate-el {
+    cursor: pointer;
+    margin-right: 170px;
+    color: whitesmoke;
+    border-radius: 3px;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 10px 10px;
+    background: #00b51e;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+}
+
+#generate-el:hover {
+    transform: scale(1.1);
+    color: #00b51e;
+    background: whitesmoke;
+    box-shadow: 0px 0px 15px 5px #00b51e;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: -40px 0px 0px 0px;
+  gap: 50px;
+}
+
+#password-one-el, #password-two-el{
+    position: relative;
+    cursor: pointer;
+    background: #403e3c;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.tooltip {
+    font-weight: 200;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease 0.1s;
+    background: #00b51e;
+    color: whitesmoke;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+#password-one-el:hover .tooltip,
+#password-two-el:hover .tooltip {
+    opacity: 1;
+}
+
+.container-h2 {
+    margin-top: 120px;
+    display: flex;
+    gap: 140px;
+}
+
+h2 {
+    color: #00b51e;
+
+}
