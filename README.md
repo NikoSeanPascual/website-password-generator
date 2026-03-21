@@ -22,11 +22,14 @@ A simple and interactive **Password Gnerator Web App that I also sent to the web
 - **Javascript** - Logic & interactivity
 
 ## Project Structure
-PasswordGenerator/
+
+```
+PasswordGenerator
 │
-├── index.html # Main HTML structure
-├── index.js # Password generation & copy logic
-└── styles.css # Styling and layout
+├── index.html     # Main HTML structure
+├── index.js       # Password generation & copy logic
+└── styles.css     # Styling and layout
+```
 
 ## How it works 
 - A predifined array containing all possible characters
@@ -45,3 +48,17 @@ PasswordGenerator/
 
 ## LIVE DEMO 
 if you want to see the actual project, feel free to check it out by clicking the link next to this emoji 👉 (https://subtle-hamster-2ddb34.netlify.app/)
+
+## Future Updates(I will work on this a bit longer and this are the features I will add everyday)
+Note: I wont be able to update this everyday because of school but I'll try since I actually want to make an actually project that isnt just sent here and never updated, because that beats the purpose of making repositories literally, also note that I've only been learning how to use HTML, CSS, JAVASCIPT FOR about a month since I used to be a python programmer, so don't expect the code to be perfect
+
+1. "Copied!" feedback - replace tootip text with **Copied!** for 1 second
+2. Password length control - Add some kind of input that can be customize base on how long the password length you want it to be 
+3. Slider for length (better UX) - will use range input instead of number
+4. Include.exclude options - CHECKBOXES
+5. Color feedback - change password bpx color when copied
+6. Regenerate button animation - Add click animation or shake effect
+7. Password strength indicator - strong, medium and weak
+8. Dark/Light mode toggle
+9. Mobile responsiveness - make it look the same when you open it on phones
+10. Export passwords - be able to download the password as .txt
