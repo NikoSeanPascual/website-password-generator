@@ -9,11 +9,27 @@ const lengthEl = document.getElementById("length-el");
 const lengthVal = document.getElementById("length-val");
 const passwordOneText = document.querySelector("#password-one-el .password-text");
 const passwordTwoText = document.querySelector("#password-two-el .password-text");
+const toggleBtn = document.getElementById("theme-toggle");
 
 lengthEl.addEventListener("input", function() {
     lengthVal.textContent = lengthEl.value;
 });
+let isAnimating = false;
 
+toggleBtn.addEventListener("click", () => {
+    if (isAnimating) return;
+
+    isAnimating = true;
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains("light-mode")) {
+        toggleBtn.textContent = "☀️";
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
+    setTimeout(() => {
+        isAnimating = false;
+    }, 600);
+});
 function generatePassword() {
     let charsetPool = [];
 

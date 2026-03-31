@@ -14,8 +14,51 @@ body {
     background: #1c1c1a;
     font-family: "Jersey 10", sans-serif;
     padding-top: 50px;
+
+    transition: background 0.5s ease, color 0.5s ease;
+}
+body.light-mode {
+    background: #ffffff;
+    color: #1c1c1a;
+}
+body.light-mode .accent {
+    color: #007a14;
 }
 
+body.light-mode .password-box {
+    background: #e5e5e5;
+}
+
+body.light-mode .tooltip {
+    background: #007a14;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #403e3c;
+    color: #00b51e;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00b51e;
+}
 h1 {
     text-shadow: 0px 0px 6px #000000;
     font-size: 60px;
