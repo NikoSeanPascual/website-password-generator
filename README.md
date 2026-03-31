@@ -47,7 +47,7 @@ PasswordGenerator
 
 
 ## LIVE DEMO 
-if you want to see the actual project, feel free to check it out by clicking the link next to this emoji 👉 (https://password-generator-v4.netlify.app/) **NOT UP TO DATE**
+if you want to see the actual project, feel free to check it out by clicking the link next to this emoji 👉 (https://password-generator-v4.netlify.app/) **UP TO DATE**
 
 ## Future Updates(I will work on this a bit longer and this are the features I will add everyday)
 Note: School is finished so I will upd everyday till this is finished feel free to send me some suggestions to add stuff
