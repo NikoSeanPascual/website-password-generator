@@ -14,6 +14,7 @@ body {
     background: #1c1c1a;
     font-family: "Jersey 10", sans-serif;
     padding-top: 50px;
+    padding: 20px;
 
     transition: background 0.5s ease, color 0.5s ease;
 }
@@ -61,7 +62,7 @@ body.light-mode .tooltip {
 }
 h1 {
     text-shadow: 0px 0px 6px #000000;
-    font-size: 60px;
+    font-size: clamp(28px, 6vw, 60px);
     margin-bottom: 10px;
     text-align: center;
 }
@@ -94,6 +95,7 @@ h1 {
 }
 
 #generate-el {
+    width: 100%;
     cursor: pointer;
     color: whitesmoke;
     border-radius: 4px;
@@ -105,11 +107,13 @@ h1 {
     transition: 0.2s;
 }
 
-#generate-el:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 15px #00b51e;
-    color: #00b51e;
-    background: whitesmoke;
+@media (hover: hover) {
+    #generate-el:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 15px #00b51e;
+        color: #00b51e;
+        background: whitesmoke;
+    }
 }
 /* SLIDER GROUP */
 .controls-group {
@@ -129,7 +133,8 @@ h1 {
 
 #length-el {
     -webkit-appearance: none;
-    width: 140px;
+    width: 100%;
+    max-width: 200px;
     background: transparent;
 }
 
@@ -165,7 +170,7 @@ h1 {
     gap: 5px;
 }
 /* CHECKBOX STYLES */
-#uppercase {accent-color: #00b51e; transition 0.2s;}
+#uppercase {accent-color: #00b51e; transition: 0.2s;}
 #uppercase:hover {transform: scale(1.1); accent-color: whitesmoke; box-shadow:  0px 0px 10px #00b51e;}
 #lowercase {accent-color: #00b51e;}
 #lowercase:hover {transform: scale(1.1); accent-color: whitesmoke; box-shadow:  0px 0px 10px #00b51e;}
@@ -193,7 +198,8 @@ h2 { color: #00b51e; font-size: 25px; }
     cursor: pointer;
     background: #403e3c;
     padding: 12px;
-    width: 220px;
+    width: 100%;
+    max-width: 220px;
     transition: background-color 0.1s step-end 1s;
     text-align: center;
     border-radius: 4px;
@@ -213,6 +219,7 @@ h2 { color: #00b51e; font-size: 25px; }
     bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap;
     background: #00b51e;
     padding: 4px 8px;
     border-radius: 4px;
@@ -249,4 +256,31 @@ h2 { color: #00b51e; font-size: 25px; }
 #strength-text {
     font-size: 18px;
     color: #00b51e;
+}
+
+@media (max-width: 600px) {
+
+    .settings-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container-h2 {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .password-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .password-box {
+        width: 90%;
+    }
+
+    .strength-bar {
+        width: 90%;
+    }
 }
