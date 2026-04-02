@@ -14,8 +14,17 @@
 <h1>Generate a<br><span class="accent">random password</span></h1>
 <p class="subtitle">Never use an insecure password ever again</p>
 
+
 <div class="input-container">
-    <button onclick="generatePassword()" id="generate-el">GENERATE PASSWORDS</button>
+    <div class="button-group">
+        <button onclick="generatePassword()" id="generate-el">
+            GENERATE PASSWORDS
+        </button>
+
+        <button onclick="exportPasswords()" id="export-el">
+            EXPORT AS TXT
+        </button>
+    </div>
 
     <div class="settings-wrapper">
         <div class="controls-group">
@@ -33,6 +42,7 @@
             <label><input type="checkbox" id="symbols" checked> #&%</label>
         </div>
     </div>
+
 </div>
 
 <div class="container-h2">
@@ -51,12 +61,14 @@
         <span class="tooltip">Copy Password</span>
     </div>
 </div>
+
 <div class="strength-wrapper">
     <div class="strength-bar">
         <div id="strength-fill"></div>
     </div>
     <span id="strength-text">Strength: —</span>
 </div>
+
 <script src="index.js"></script>
 </body>
 </html>

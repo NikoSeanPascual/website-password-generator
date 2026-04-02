@@ -1,3 +1,4 @@
+// CHARACTERS IN PASSWORDS
 const characters = {
     lowercase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     uppercase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -5,12 +6,14 @@ const characters = {
     symbols: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "[", "]", "{", "}", "|", ";", ":", "'", ",", ".", "<", ">", "/", "?", "`", "~"]
 };
 
+// DOM QUERIES
 const lengthEl = document.getElementById("length-el");
 const lengthVal = document.getElementById("length-val");
 const passwordOneText = document.querySelector("#password-one-el .password-text");
 const passwordTwoText = document.querySelector("#password-two-el .password-text");
 const toggleBtn = document.getElementById("theme-toggle");
 
+// EVENT LISTENERS AND MODE TOGGLE CONDITION
 lengthEl.addEventListener("input", function() {
     lengthVal.textContent = lengthEl.value;
 });
@@ -30,6 +33,8 @@ toggleBtn.addEventListener("click", () => {
         isAnimating = false;
     }, 600);
 });
+
+// GENERATE PASSWORD AND EXPORT BUTTONS FUNCTIONS
 function generatePassword() {
     let charsetPool = [];
 
@@ -57,6 +62,29 @@ function generatePassword() {
     updateStrengthUI(pass1, pass2);
 }
 
+function exportPasswords() {
+    const pass1 = passwordOneText.textContent;
+    const pass2 = passwordTwoText.textContent;
+
+    if (pass1 === "..." || pass2 === "...") {
+        alert("Generate passwords first!");
+        return;
+    }
+
+    const content = `Generated Passwords:\n\nPassword 1: ${pass1}\nPassword 2: ${pass2}`;
+
+    const blob = new Blob([content], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "passwords.txt";
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+// TOOLTIP FUNCTION
 function setupCopy(el, textEl) {
     el.addEventListener("click", function() {
         const tooltip = el.querySelector(".tooltip");
@@ -69,15 +97,15 @@ function setupCopy(el, textEl) {
         });
     });
 }
+
+//STRENGTH FUNCTIONS
 function evaluateStrength(password) {
     let score = 0;
 
-    // Length scoring
     if (password.length >= 8) score++;
     if (password.length >= 12) score++;
     if (password.length >= 16) score++;
 
-    // Character variety scoring
     if (/[a-z]/.test(password)) score++;
     if (/[A-Z]/.test(password)) score++;
     if (/[0-9]/.test(password)) score++;
@@ -85,6 +113,7 @@ function evaluateStrength(password) {
 
     return score;
 }
+
 function updateStrengthUI(password) {
     const strengthFill = document.getElementById("strength-fill");
     const strengthText = document.getElementById("strength-text");

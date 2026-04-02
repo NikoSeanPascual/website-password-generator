@@ -5,7 +5,7 @@
     75% { transform: translateX(-3px); }
     100% { transform: translateX(0); }
 }
-
+/*BODY AND THEME TOGGLE STYLES*/
 body {
     display: flex;
     flex-direction: column;
@@ -15,7 +15,6 @@ body {
     font-family: "Jersey 10", sans-serif;
     padding-top: 50px;
     padding: 20px;
-
     transition: background 0.5s ease, color 0.5s ease;
 }
 body.light-mode {
@@ -74,7 +73,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* MAIN LAYOUT BAR */
+/*UI STYLES */
 .input-container {
     display: flex;
     flex-direction: column;
@@ -115,7 +114,34 @@ h1 {
         background: whitesmoke;
     }
 }
-/* SLIDER GROUP */
+.button-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#export-el {
+    width: 100%;
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 4px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 24px;
+    padding: 12px 24px;
+    background: #3e4c5e;
+    border: none;
+    transition: 0.2s;
+}
+
+@media (hover: hover) {
+    #export-el:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 10px #3e4c5e;
+        background: whitesmoke;
+        color: #3e4c5e;
+    }
+}
+/* SLIDER STYLES */
 .controls-group {
     display: flex;
     flex-direction: column;
@@ -154,7 +180,7 @@ h1 {
     cursor: pointer;
 }
 
-/* CHECKBOX GROUP */
+/* CHECKBOX CONTAINERS */
 .checkbox-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -231,7 +257,7 @@ h2 { color: #00b51e; font-size: 25px; }
 }
 
 .password-box:hover .tooltip { opacity: 1; }
-
+/*STRENGTH BAR AND CONTAINERS*/
 .strength-wrapper {
     margin-top: 20px;
     text-align: center;
@@ -257,9 +283,11 @@ h2 { color: #00b51e; font-size: 25px; }
     font-size: 18px;
     color: #00b51e;
 }
-
+/*MOBILE RESPONSIVE STYLE*/
 @media (max-width: 600px) {
-
+    .button-group {
+        flex-direction: column;
+    }
     .settings-wrapper {
         flex-direction: column;
         gap: 20px;
